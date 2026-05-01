@@ -1,0 +1,12 @@
+<svg width="220" height="56" viewBox="0 0 220 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mbdev-grad" x1="10" y1="8" x2="54" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7F8DFF"/>
+      <stop offset="1" stop-color="#42D3C4"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="52" height="52" rx="14" fill="#0F1731" stroke="url(#mbdev-grad)" stroke-width="3"/>
+  <text x="28" y="35" fill="#EAF0FF" font-family="Segoe UI, Inter, sans-serif" font-size="22" font-weight="800" text-anchor="middle">MB</text>
+  <text x="66" y="25" fill="#A9B6FF" font-family="Segoe UI, Inter, sans-serif" font-size="12" font-weight="600" letter-spacing="1.6">MB</text>
+  <text x="66" y="44" fill="#EEF3FF" font-family="Segoe UI, Inter, sans-serif" font-size="24" font-weight="800" letter-spacing="0.8">DEV</text>
+</svg>
