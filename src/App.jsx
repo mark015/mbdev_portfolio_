@@ -174,12 +174,17 @@ function App() {
       : 'dark'
   }
 
+  const getInitialProjectCount = () => {
+    if (typeof window === 'undefined') return 6
+    return window.innerWidth <= 700 ? 3 : 6
+  }
+
   const [theme, setTheme] = useState(getInitialTheme)
   const [roleIndex, setRoleIndex] = useState(0)
   const [typedRole, setTypedRole] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
   const [activeProjectTab, setActiveProjectTab] = useState('All')
-  const [visibleProjectsCount, setVisibleProjectsCount] = useState(6)
+  const [visibleProjectsCount, setVisibleProjectsCount] = useState(getInitialProjectCount)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [contactForm, setContactForm] = useState({
     name: '',
@@ -241,8 +246,17 @@ function App() {
   }, [typedRole, isDeleting, roleIndex])
 
   useEffect(() => {
-    setVisibleProjectsCount(6)
+    setVisibleProjectsCount(getInitialProjectCount())
   }, [activeProjectTab])
+
+  useEffect(() => {
+    const handleResize = () => {
+      setVisibleProjectsCount(getInitialProjectCount())
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   useEffect(() => {
     const revealElements = document.querySelectorAll('.reveal')
@@ -525,15 +539,26 @@ function App() {
               </article>
             ))}
           </div>
-          {filteredProjects.length > visibleProjectsCount ? (
-            <button
-              type="button"
-              className="load-more-btn"
-              onClick={() => setVisibleProjectsCount((count) => count + 6)}
-            >
-              Load More
-            </button>
-          ) : null}
+          <div className="projects-button-group">
+            {filteredProjects.length > visibleProjectsCount ? (
+              <button
+                type="button"
+                className="load-more-btn"
+                onClick={() => setVisibleProjectsCount((count) => count + (window.innerWidth <= 700 ? 3 : 6))}
+              >
+                Load More
+              </button>
+            ) : null}
+            {visibleProjectsCount > getInitialProjectCount() ? (
+              <button
+                type="button"
+                className="load-more-btn show-less"
+                onClick={() => setVisibleProjectsCount(getInitialProjectCount())}
+              >
+                Show Less
+              </button>
+            ) : null}
+          </div>
         </section>
 
         <section className="section reveal" id="skills">
