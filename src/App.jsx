@@ -5,7 +5,12 @@ import mbDevLogoLight from './assets/mb-dev-logo-light.svg'
 import projectPreview from './assets/hero.png'
 import traffic from './assets/traffic.webp'
 import dannieleForde from './assets/danniele-forde.webp'
-
+import toboso from './assets/toboso.webp'
+import assuredFire from './assets/assured_fire_services.webp'
+import bis from './assets/BISys.webp'
+import kwc from './assets/kwc-project.webp'
+import firenzo from './assets/firenzo-project.webp'
+import jjNutrition from './assets/jj_nutrition-project.webp'
 const projects = [
   {
     title: 'Khaw Wealth Consulting',
@@ -13,10 +18,9 @@ const projects = [
       'A corporate website focused on purposeful wealth planning, clear value propositions, and conversion-oriented consultation flows.',
     stack: 'WordPress, UI/UX Design, SEO',
     category: 'Websites',
-    githubUrl: 'https://github.com/mark015',
-    siteUrl: 'https://mb-dev-portfolio.usatsagay.fun/',
-    imageUrl:
-      'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmb-dev-portfolio.usatsagay.fun%2F%23portfolio?w=800',
+    githubUrl: '#',
+    siteUrl: 'https://kwc.netstripes.au/',
+    imageUrl: kwc, 
   },
   {
     title: 'Danniele Forde (Property Advisory)',
@@ -24,8 +28,8 @@ const projects = [
       'A modern property advisory website focused on credibility, trust-building, and clear consultation pathways for clients.',
     stack: 'WordPress, UI/UX Design, SEO',
     category: 'Websites',
-    githubUrl: 'https://github.com/mark015',
-    siteUrl: 'https://mb-dev-portfolio.usatsagay.fun/',
+    githubUrl: '#',
+    siteUrl: 'https://danielleforde.com.au/',
     imageUrl:dannieleForde,
   },
   {
@@ -35,9 +39,8 @@ const projects = [
     stack: 'WordPress, PHP, Responsive Design',
     category: 'Websites',
     githubUrl: 'https://github.com/mark015',
-    siteUrl: 'https://mb-dev-portfolio.usatsagay.fun/',
-    imageUrl:
-      'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmb-dev-portfolio.usatsagay.fun%2F%23services?w=800',
+    siteUrl: 'https://assuredfireservices.com.au/',
+    imageUrl: assuredFire,
   },
   {
     title: 'Firenzo',
@@ -46,10 +49,9 @@ const projects = [
     stack: 'WordPress, E-Commerce, Performance Optimization',
     category: 'Websites',
     githubUrl: 'https://github.com/mark015',
-    siteUrl: 'https://mb-dev-portfolio.usatsagay.fun/',
-    imageUrl:
-      'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmb-dev-portfolio.usatsagay.fun%2F%23portfolio?w=900',
-  },
+    siteUrl: 'https://firenzo.co.nz/',
+    imageUrl:firenzo,
+       },
   {
     title: 'JJ Nutrition',
     description:
@@ -57,9 +59,8 @@ const projects = [
     stack: 'WordPress, UI Design, Content Structuring',
     category: 'Websites',
     githubUrl: 'https://github.com/mark015',
-    siteUrl: 'https://mb-dev-portfolio.usatsagay.fun/',
-    imageUrl:
-      'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmb-dev-portfolio.usatsagay.fun%2F%23contact?w=800',
+    siteUrl: 'https://jjn.netstripes.au/',
+    imageUrl: jjNutrition,
   },
   {
     title: 'Traffic Information System',
@@ -68,7 +69,7 @@ const projects = [
     stack: 'PHP, MySQL, JavaScript',
     category: 'Web Application',
     githubUrl: 'https://github.com/mark015',
-    siteUrl: 'https://mb-dev-portfolio.usatsagay.fun/',
+    siteUrl: '#',
     imageUrl:traffic,
   },
   {
@@ -78,20 +79,18 @@ const projects = [
     stack: 'PHP, MySQL, Data Visualization',
     category: 'Web Application',
     githubUrl: 'https://github.com/mark015',
-    siteUrl: 'https://mb-dev-portfolio.usatsagay.fun/',
-    imageUrl:
-      'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmb-dev-portfolio.usatsagay.fun%2F%23experience?w=800',
+    siteUrl: '#',
+    imageUrl: toboso,
   },
   {
-    title: 'Election Results Dashboard',
+    title: 'Barangay Information System',
     description:
-      'A data-heavy election dashboard with live-style status indicators and percentage-based vote analytics for easier decision tracking.',
+      'A Barangay Information System (BIS) is a specialized digital platform designed to automate and streamline the administrative operations of a local government unit (Barangay). It replaces traditional, manual paper-based filing with a secure, centralized database to manage community records and public services.',
     stack: 'PHP, MySQL, JavaScript Charts',
     category: 'Web Application',
     githubUrl: 'https://github.com/mark015',
-    siteUrl: 'https://mb-dev-portfolio.usatsagay.fun/',
-    imageUrl:
-      'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmb-dev-portfolio.usatsagay.fun%2F%23home?w=820',
+    siteUrl: '#',
+    imageUrl:bis,
   },
 ]
 
@@ -193,6 +192,8 @@ function App() {
     message: '',
   })
   const [formStatus, setFormStatus] = useState('')
+  const [selectedProject, setSelectedProject] = useState(null)
+  const [showProjectsPage, setShowProjectsPage] = useState(false)
 
   const handleContactChange = (event) => {
     const { name, value } = event.target
@@ -328,6 +329,223 @@ function App() {
 
   return (
     <div className="portfolio" ref={portfolioRef}>
+      {showProjectsPage ? (
+        <>
+          <header className="site-header reveal">
+            <nav className="top-nav">
+              <button
+                type="button"
+                className="btn ghost"
+                onClick={() => setShowProjectsPage(false)}
+                style={{ padding: '0.5rem 1rem' }}
+              >
+                ← Back to Portfolio
+              </button>
+              <div className="nav-actions">
+                <button
+                  type="button"
+                  className="theme-toggle"
+                  onClick={toggleTheme}
+                  aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                >
+                  {theme === 'dark' ? (
+                    <svg
+                      className="theme-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="1.8" />
+                      <path
+                        d="M12 2.5V5.1M12 18.9V21.5M21.5 12H18.9M5.1 12H2.5M18.7 5.3L16.9 7.1M7.1 16.9L5.3 18.7M18.7 18.7L16.9 16.9M7.1 7.1L5.3 5.3"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      className="theme-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M20 14.2A8.5 8.5 0 1 1 9.8 4 7 7 0 0 0 20 14.2Z"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
+                </button>
+              </div>
+            </nav>
+          </header>
+          <main className="projects-page">
+            <section className="projects-section reveal">
+              <div className="section-header">
+                <h2>All Projects</h2>
+                <p>Explore my complete portfolio of work</p>
+              </div>
+              <div className="projects-full-grid">
+                {projects.map((project) => (
+                  <div key={project.title} className="project-card reveal">
+                    <div className="project-image">
+                      <img src={project.imageUrl} alt={project.title} />
+                    </div>
+                    <div className="project-info">
+                      <h3>{project.title}</h3>
+                      <p className="project-stack">{project.stack}</p>
+                      <p className="project-short-desc">{project.description.substring(0, 100)}...</p>
+                      <div className="project-actions">
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-link-icon"
+                          aria-label={`${project.title} GitHub`}
+                        >
+                          <img
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
+                            alt=""
+                          />
+                        </a>
+                        <a
+                          href={project.siteUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="project-link-icon"
+                          aria-label={`${project.title} live site`}
+                        >
+                          <svg viewBox="0 0 24 24" fill="none">
+                            <path
+                              d="M14 4H20V10M20 4L11 13"
+                              stroke="currentColor"
+                              strokeWidth="1.8"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M10 6H7.2C6.08 6 5.52 6 5.092 6.218C4.716 6.409 4.409 6.716 4.218 7.092C4 7.52 4 8.08 4 9.2V16.8C4 17.92 4 18.48 4.218 18.908C4.409 19.284 4.716 19.591 5.092 19.782C5.52 20 6.08 20 7.2 20H14.8C15.92 20 16.48 20 16.908 19.782C17.284 19.591 17.591 19.284 17.782 18.908C18 18.48 18 17.92 18 16.8V14"
+                              stroke="currentColor"
+                              strokeWidth="1.8"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </a>
+                        <button
+                          type="button"
+                          className="project-link-icon"
+                          onClick={() => {
+                            setSelectedProject(project)
+                            setShowProjectsPage(false)
+                          }}
+                          aria-label={`View ${project.title} details`}
+                          title="View details"
+                        >
+                          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path
+                              d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                              stroke="currentColor"
+                              strokeWidth="1.8"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.8" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </main>
+          <footer className="footer reveal">
+            <p>Copyright {new Date().getFullYear()} Mark C. Balinario. All rights reserved.</p>
+            <div className="footer-links">
+              <button
+                type="button"
+                className="btn ghost"
+                onClick={() => setShowProjectsPage(false)}
+              >
+                Back
+              </button>
+              <a href="https://github.com/mark015" target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+            </div>
+          </footer>
+        </>
+      ) : selectedProject ? (
+        <div className="project-detail reveal">
+          <button
+            type="button"
+            className="btn ghost"
+            onClick={() => setSelectedProject(null)}
+            style={{ marginBottom: '1.5rem' }}
+          >
+            ← Back
+          </button>
+          <article className="project-detail-card">
+            <img
+              src={selectedProject.imageUrl}
+              alt={selectedProject.title}
+              className="project-detail-image"
+            />
+            <div className="project-detail-content">
+              <h1>{selectedProject.title}</h1>
+              <p className="project-detail-stack">{selectedProject.stack}</p>
+              <p className="project-detail-description">{selectedProject.description}</p>
+              <div className="project-detail-links">
+                <a
+                  href={selectedProject.githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-link-icon"
+                  aria-label={`${selectedProject.title} GitHub`}
+                  title="View GitHub"
+                >
+                  <img
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
+                    alt=""
+                  />
+                </a>
+                <a
+                  href={selectedProject.siteUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-link-icon"
+                  aria-label={`${selectedProject.title} live site`}
+                  title="View live site"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                      d="M14 4H20V10M20 4L11 13"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M10 6H7.2C6.08 6 5.52 6 5.092 6.218C4.716 6.409 4.409 6.716 4.218 7.092C4 7.52 4 8.08 4 9.2V16.8C4 17.92 4 18.48 4.218 18.908C4.409 19.284 4.716 19.591 5.092 19.782C5.52 20 6.08 20 7.2 20H14.8C15.92 20 16.48 20 16.908 19.782C17.284 19.591 17.591 19.284 17.782 18.908C18 18.48 18 17.92 18 16.8V14"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      ) : (
+        <>
       <header className="site-header reveal">
         <nav className="top-nav">
           <a href="#" className="brand" aria-label="MB-DEV home">
@@ -559,7 +777,7 @@ function App() {
               </button>
             ) : null}
           </div>
-        </section>
+        </section>  
 
         <section className="section reveal" id="skills">
           <h2>Skills</h2>
@@ -703,6 +921,37 @@ function App() {
           </a>
         </div>
       </footer>
+        </>
+      )}
+
+      {/* AI Chat Box */}
+      <div className="ai-chatbox reveal">
+        <div className="chatbox-header">
+          <h3>Ask AI</h3>
+          <button
+            type="button"
+            className="chatbox-close"
+            aria-label="Close chat"
+          >
+            ×
+          </button>
+        </div>
+        <div className="chatbox-messages">
+          <div className="message bot-message">
+            <p>Hi! How can I assist you today?</p>
+          </div>
+        </div>
+        <div className="chatbox-input-area">
+          <input
+            type="text"
+            placeholder="Type your message..."
+            className="chatbox-input"
+          />
+          <button type="button" className="chatbox-send">
+            Send
+          </button>
+        </div>
+      </div>
     </div>
   )
 }
