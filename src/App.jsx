@@ -11,6 +11,7 @@ import bis from './assets/BISys.webp'
 import kwc from './assets/kwc-project.webp'
 import firenzo from './assets/firenzo-project.webp'
 import jjNutrition from './assets/jj_nutrition-project.webp'
+import cvFile from './assets/Mark_Balinario_CV.pdf'
 const projects = [
   {
     title: 'Khaw Wealth Consulting',
@@ -635,8 +636,8 @@ function App() {
               <a href="#projects" className="btn primary">
                 Explore My Work
               </a>
-              <a href="#contact" className="btn ghost">
-                Start a Project
+              <a href={cvFile} download="Mark_Balinario_CV.pdf" className="btn ghost">
+                Download CV
               </a>
             </div>
             <div className="hero-metrics">
@@ -926,34 +927,6 @@ function App() {
         </>
       )}
 
-      {/* AI Chat Box */}
-      <div className="ai-chatbox reveal">
-        <div className="chatbox-header">
-          <h3>Ask AI</h3>
-          <button
-            type="button"
-            className="chatbox-close"
-            aria-label="Close chat"
-          >
-            ×
-          </button>
-        </div>
-        <div className="chatbox-messages">
-          <div className="message bot-message">
-            <p>Hi! How can I assist you today?</p>
-          </div>
-        </div>
-        <div className="chatbox-input-area">
-          <input
-            type="text"
-            placeholder="Type your message..."
-            className="chatbox-input"
-          />
-          <button type="button" className="chatbox-send">
-            Send
-          </button>
-        </div>
-      </div>
     </div>
   )
 }
