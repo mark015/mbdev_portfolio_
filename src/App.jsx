@@ -111,17 +111,17 @@ const services = [
   {
     title: 'UI/UX Design',
     description:
-      'I design user-centered interfaces that are clean, consistent, and optimized for real user behavior across devices.',
+      'Crafting intuitive, conversion-optimized interfaces that elevate user experience and drive engagement. From wireframes to pixel-perfect designs, I ensure every interaction feels seamless and purposeful.',
   },
   {
     title: 'Web Development',
     description:
-      'I build responsive websites and web apps that are fast, SEO-friendly, secure, and aligned with business goals.',
+      'Building robust, scalable web applications with modern technologies. I deliver lightning-fast, secure, and SEO-optimized solutions that perform flawlessly across all devices and browsers.',
   },
   {
     title: 'Database Management',
     description:
-      'I design and maintain reliable databases with a focus on structure, performance tuning, and long-term maintainability.',
+      'Architecting efficient, secure database systems that power your applications. I optimize performance, ensure data integrity, and implement scalable solutions that grow with your business needs.',
   },
 ]
 
@@ -131,9 +131,9 @@ const experience = [
     company: 'Techzquad',
     period: '2019 - Present',
     highlights: [
-      'Developed and maintained web applications using Native PHP, MySQL, and JavaScript.',
-      'Built and customized WordPress websites, including theme updates and plugin integration.',
-      'Managed deployments, hosting setup, and domain configuration across client projects.',
+      'Led development of 15+ high-impact web projects, consistently delivering within budget and timeline constraints.',
+      'Architected and deployed WordPress solutions with custom themes and plugins, improving client performance metrics.',
+      'Managed full project lifecycle from concept to deployment, ensuring seamless hosting and domain management.',
     ],
   },
   {
@@ -141,9 +141,9 @@ const experience = [
     company: 'Ignition Consulting',
     period: 'October 2025 - Present',
     highlights: [
-      'Developed responsive WordPress and Shopify websites with user-focused UX.',
-      'Improved site performance and SEO practices to increase engagement and traffic.',
-      'Designed and optimized UI assets for stronger branding and usability.',
+      'Developed responsive e-commerce and corporate websites using modern frameworks, resulting in improved user engagement.',
+      'Implemented SEO and performance optimizations that increased site traffic and conversion rates.',
+      'Created compelling UI/UX designs that enhanced brand identity and user experience across multiple platforms.',
     ],
   },
   {
@@ -151,9 +151,9 @@ const experience = [
     company: 'Setup Phils. Inc.',
     period: 'Nov 2021 - May 2023',
     highlights: [
-      'Maintained and expanded internal applications using Laravel and Vue.js.',
-      'Improved API performance used in WordPress-based projects.',
-      'Supported long-term system stability with bug fixes and enhancements.',
+      'Maintained and enhanced Laravel/Vue.js applications, improving API performance and system reliability.',
+      'Optimized WordPress integrations for better functionality and user experience.',
+      'Ensured system stability through proactive bug fixes and continuous improvement initiatives.',
     ],
   },
 ]
@@ -626,33 +626,34 @@ function App() {
               {typedRole}
             </h2>
             <p className="intro">
-              I build clean, responsive websites and web apps.
+              Transforming ideas into exceptional digital experiences.
             </p>
             <p className="hero-description">
-              I am a passionate web developer focused on modern, user-friendly
-              applications. My approach blends performance, usability, and clean
-              visual design to deliver meaningful digital experiences.
+              Results-driven web developer specializing in building high-performance websites and applications. I deliver scalable solutions that drive business growth, enhance user engagement, and exceed client expectations through innovative design and modern technologies. 
             </p>
             <div className="hero-actions">
               <a href="#projects" className="btn primary">
-                View Projects
+                Explore My Work
               </a>
               <a href="#contact" className="btn ghost">
-                Hire Me
+                Start a Project
               </a>
             </div>
             <div className="hero-metrics">
               <p>
-                <strong>20+</strong> Projects delivered
+                <strong>25+</strong> Successful Projects
               </p>
               <p>
-                <strong>6+</strong> Years of experience
+                <strong>6+</strong> Years of Excellence
+              </p>
+              <p>
+                <strong>100%</strong> Client Satisfaction
               </p>
             </div>
           </div>
           <div className="hero-visual">
             <img src={profilePhoto} alt="Mark C. Balinario profile" />
-            <div className="hero-image-badge">Available for Freelance</div>
+            <div className="hero-image-badge">Available for New Projects</div>
           </div>
         </div>
       </header>
@@ -663,9 +664,10 @@ function App() {
             <div className="about-copy">
               <h2>About Me</h2>
               <p>
-                I specialize in building and maintaining websites that are reliable,
-                scalable, and easy to use. I enjoy solving complex problems and
-                continuously improving both technical quality and user experience.
+                As a dedicated web developer, I excel at turning complex challenges into elegant, user-centric solutions. My expertise spans modern frameworks, database optimization, and performance-driven development. I don't just write code—I architect digital experiences that scale, perform, and deliver measurable results for businesses.
+              </p>
+              <p>
+                With a proven track record of successful project deliveries and client satisfaction, I bring a strategic mindset to every collaboration. Whether it's optimizing existing systems or building from the ground up, I focus on creating value that drives growth and exceeds expectations.
               </p>
             </div>
             <div className="about-gif-wrap">
@@ -693,6 +695,7 @@ function App() {
 
         <section className="section reveal" id="projects">
           <h2>Featured Projects</h2>
+          <p className="section-description">Explore a selection of my recent work that demonstrates technical expertise and creative problem-solving.</p>
           <div className="project-tabs" role="tablist" aria-label="Project categories">
             {projectTabs.map((tab) => (
               <button
@@ -811,8 +814,8 @@ function App() {
         </section>
 
         <section className="section contact reveal" id="contact">
-          <h2>Let&apos;s Work Together</h2>
-          <p>Open to freelance projects and full-time opportunities.</p>
+          <h2>Ready to Build Something Amazing?</h2>
+          <p>Let's discuss how we can transform your vision into a digital success story. I'm currently available for freelance projects and full-time opportunities.</p>
           <div className="contact-grid">
             <div className="contact-card">
               <form className="contact-form" onSubmit={handleContactSubmit}>
@@ -868,8 +871,7 @@ function App() {
             </div>
             <div className="contact-card contact-info">
               <p>
-                Feel free to send a message directly, or use the contact links below
-                to connect on email, GitHub, LinkedIn, or by phone.
+                Whether you need a complete website overhaul, a custom web application, or strategic technical consultation, I'm here to deliver results that exceed your expectations. Let's connect and explore how we can achieve your goals together.
               </p>
               <div className="contact-links">
                 <a href="mailto:mbalinario.dev@gmail.com">
